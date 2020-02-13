@@ -1,5 +1,3 @@
-const apiUrl1 = "https://pokeapi.co/api/v2/pokemon/ditto/";
-const apiUrl2 = "https://randomuser.me/api/";
 const apiUrl3 = "https://api.rawg.io/api/games";
 const wrapperDiv = document.querySelector(".wrapper");
 
@@ -7,19 +5,14 @@ let pageNumber = 2;
 let pageSize = 26;
 
 let genre = "";
+
 const queryString = document.location.search;
 const combinedApiUrl = `${apiUrl3}${queryString}`;
 let giveMeQueryStrings = new URLSearchParams(queryString);
 
-console.log("A", giveMeQueryStrings.has("genre"))
-console.log("B", giveMeQueryStrings.get("genre"))
-
 if (giveMeQueryStrings.get("genre") !== null) {
   genre = giveMeQueryStrings.get("genre");
-  console.log(genre);
 }
-
-let newUrl = `${apiUrl3}${genre}`;
 
 fetch(combinedApiUrl)
   .then(function(response) {
@@ -31,13 +24,12 @@ fetch(combinedApiUrl)
   })
   .then(function(json) {
     const results = json;
-    // console.log(results);
-    // pass in results array into function as an argument
-    // getName(results);
-    // getImage(results);
+    console.log(results);
+    getImage(json);
   })
   .catch(function(error) {
     console.log(error);
+
   });
 
 // resultsArray is a parameter, waiting for
