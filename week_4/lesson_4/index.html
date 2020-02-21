@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link rel="stylesheet" href="style.css" type="text/css">
+    <title>Lesson 4 - Practice questions</title>
+</head>
+<body>
+
+    <form>
+        <div>
+            <input type="text" id="firstName" placeholder="First name" />
+            <div id="firstNameError" class="error">Please enter your first name</div>
+        </div>
+        <div>
+            <input type="text" id="email" placeholder="Email address" />
+            <div id="emailError" class="error">Please enter your email address</div>
+            <div id="invalidEmailError" class="error">Please enter a valid email address</div>
+        </div>
+        <div>
+            <textarea id="message"></textarea>
+            <div id="messageError" class="error">Your message must be at least five characters long</div>
+        </div>
+        <div>
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+
+    <div class="elephant-container hidden">
+        <h1>Elephant name</h1>
+        <img src="https://via.placeholder.com/250" alt="Elephant name" />
+        <div class="note">Note content goes here</div>
+    </div>
+    
+    <div class="no-result hidden">
+        No elephant details were returned.
+    </div>
+
+
+   <!--<div class="results"></div> --> 
+    
+    <script src="farida.js"></script>
+</body>
+</html>
